@@ -21,8 +21,7 @@ public class InfoUpdater {
         System.out.println("Lek: ");
         String medicine = scanner.next();
 
-        try {
-            Connection connection = connector.getConnection();
+        try (java.sql.Connection connection = DriverManager.getConnection(connector.getUrl(), connector.getUser(), connector.getPassword())) {
             String update = "Update Registration SET medicine = '" + medicine + "' where id = " + id;
             Statement statement = connection.createStatement();
             int rows = statement.executeUpdate(update);
@@ -34,6 +33,7 @@ public class InfoUpdater {
             }
         } catch (SQLException e) {
             e.getMessage();
+            System.out.println("Błąd bazy danych\n");
         }
     }
 
@@ -44,8 +44,7 @@ public class InfoUpdater {
         String dosingTime = scanner.next();
         LocalTime dosingTimeParsed = LocalTime.parse(dosingTime);
 
-        try {
-            Connection connection = connector.getConnection();
+        try (java.sql.Connection connection = DriverManager.getConnection(connector.getUrl(), connector.getUser(), connector.getPassword())) {
             String update = "Update Registration SET time = '" + dosingTimeParsed + "' where id = " + id;
             Statement statement = connection.createStatement();
             int rows = statement.executeUpdate(update);
@@ -57,14 +56,15 @@ public class InfoUpdater {
             }
         } catch (DateTimeParseException e) {
             e.getMessage();
+            System.out.println("Błąd bazy danych\n");
         } catch (SQLException e) {
-            e.printStackTrace();
+            e.getMessage();
+            System.out.println("Błąd bazy danych\n");
         }
     }
 
     private void selectUpdatedRow() {
-        try {
-            connection = connector.getConnection();
+        try (java.sql.Connection connection = DriverManager.getConnection(connector.getUrl(), connector.getUser(), connector.getPassword())) {
             String select = "Select * from Registration where id = " + id;
             statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(select);
@@ -75,8 +75,10 @@ public class InfoUpdater {
             }
         } catch (SQLFeatureNotSupportedException e) {
             e.getMessage();
+            System.out.println("Błąd bazy danych\n");
         } catch (SQLException e) {
-            e.printStackTrace();
+            e.getMessage();
+            System.out.println("Błąd bazy danych\n");
         }
     }
 }

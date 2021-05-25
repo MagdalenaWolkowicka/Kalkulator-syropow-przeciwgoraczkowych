@@ -1,10 +1,7 @@
-package calculator;
+package registration;
 
-import registration.MenuRegistration;
 import registration.registrationFunctions.*;
 
-import java.io.FileWriter;
-import java.sql.SQLException;
 import java.util.Scanner;
 
 public class Registration {
@@ -23,7 +20,7 @@ public class Registration {
         System.out.println("| Rejestr godzin podawania leków |");
         System.out.println("----------------------------------");
         while (!exitRegistration) {
-            menuRegistration.showMenu();
+            System.out.println(menuRegistration.getRegistrationMenuOptionsToPrint());
             actionMenu();
         }
     }

@@ -16,11 +16,4 @@ public class PatientInfo {
         }
         return bodyWeight;
     }
-
-    public boolean checkTheWeight() {
-        if (bodyWeight > 0) {
-            return true;
-        }
-        return false;
-    }
 }

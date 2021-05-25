@@ -1,38 +1,25 @@
 package registration;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MenuRegistration {
 
-    public enum Options {
+    private String registrationMenuOptionsToPrint;
 
-        SAVE("1. Zapisz godzinę podania leku"),
-        SELECT("2. Pokaż wszystkie godziny"),
-        UPDATE_MEDICINE("3. Edytuj nazwę leku"),
-        UPDATE_TIME("4. Edytuj czas"),
-        DELETE("5. Usuń"),
-        DROP("6. Reset"),
-        EXIT("0. Wstecz");
-
-        private String value;
-
-        Options(String value) {
-            this.value = value;
-        }
-
-        public String getValue() {
-            return value;
-        }
+    public MenuRegistration() {
+        List<String> registrationMenuOptions = new ArrayList<>();
+        registrationMenuOptions.add("1. Zapisz godzinę podania leku");
+        registrationMenuOptions.add("2. Pokaż wszystkie godziny");
+        registrationMenuOptions.add("3. Edytuj nazwę leku");
+        registrationMenuOptions.add("4. Edytuj czas");
+        registrationMenuOptions.add("5. Usuń");
+        registrationMenuOptions.add("6. Reset");
+        registrationMenuOptions.add("0. Wstecz");
+        registrationMenuOptionsToPrint = String.join("\n", registrationMenuOptions);
     }
 
-    Options[] options = Options.values();
-
-    public void showMenu() {
-        ArrayList<String> listMenu = new ArrayList<>();
-        for (int i = 0; i < options.length; i++) {
-            listMenu.add(options[i].getValue());
-        }
-        String optionsToChoose = String.join("\n", listMenu);
-        System.out.println(optionsToChoose);
+    public String getRegistrationMenuOptionsToPrint() {
+        return registrationMenuOptionsToPrint;
     }
 }

@@ -1,6 +1,7 @@
 package calculator;
 
 import informations.MedicinesInfoReader;
+import registration.Registration;
 
 import java.sql.SQLException;
 import java.util.Scanner;
@@ -8,7 +9,6 @@ import java.util.Scanner;
 public class Calculator {
 
     private boolean exitCalculator = false;
-
     private SubstanceSelection substanceSelection = new SubstanceSelection();
     private Registration registration = new Registration();
     private MedicinesInfoReader medicinesInfoReader = new MedicinesInfoReader();
@@ -20,7 +20,7 @@ public class Calculator {
         System.out.println("");
         MainMenu mainMenu = new MainMenu();
         while (!exitCalculator) {
-            mainMenu.showMenu();
+            System.out.println(mainMenu.getMenuOptionsToPrint());
             actionMenu();
         }
     }
@@ -46,5 +46,4 @@ public class Calculator {
                 System.out.println("Błędny wybór\n");
         }
     }
-
 }

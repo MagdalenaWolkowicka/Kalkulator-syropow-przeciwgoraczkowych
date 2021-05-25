@@ -13,10 +13,9 @@ public class SubstanceSelection {
     private boolean exitActiveSubstancesMenu = false;
 
     public void selectSubstance() {
-        System.out.println("\nSubstancja, którą zawiera podawany lek to:");
         ActiveSubstanceMenu activeSubstanceMenu = new ActiveSubstanceMenu();
         while (!exitActiveSubstancesMenu) {
-            activeSubstanceMenu.showActiveSubstanceMenu();
+            System.out.println(activeSubstanceMenu.getActiveSubstanceMenuOptionsToPrint());
             actionMenu();
         }
     }
@@ -24,7 +23,6 @@ public class SubstanceSelection {
 
     private void actionMenu() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("\nWybierz substancję:");
         String option = scanner.next();
         switch (option) {
             case "1":

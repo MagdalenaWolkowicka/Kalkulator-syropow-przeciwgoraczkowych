@@ -1,34 +1,22 @@
 package calculator;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ActiveSubstanceMenu {
 
-    public enum ActiveSubstanceOptions {
+    private String activeSubstanceMenuOptionsToPrint;
 
-        PARACETAMOL("1. Paracetamol"),
-        IBUPROFEN("2. Ibuprofen"),
-        BACK("0. Wstecz");
-
-        private String value;
-
-        ActiveSubstanceOptions(String value) {
-            this.value = value;
-        }
-
-        public String getValue() {
-            return value;
-        }
+    public ActiveSubstanceMenu() {
+        List<String> activeSubstanceMenuOptions = new ArrayList<>();
+        activeSubstanceMenuOptions.add("\nWybierz substancję czynną podawanego leku:");
+        activeSubstanceMenuOptions.add("1. Paracetamol");
+        activeSubstanceMenuOptions.add("2. Ibuprofen");
+        activeSubstanceMenuOptions.add("0. Wstecz");
+        activeSubstanceMenuOptionsToPrint = String.join("\n", activeSubstanceMenuOptions);
     }
 
-    ActiveSubstanceMenu.ActiveSubstanceOptions[] options = ActiveSubstanceMenu.ActiveSubstanceOptions.values();
-
-    public void showActiveSubstanceMenu() {
-        ArrayList<String> listMenu = new ArrayList<>();
-        for (int i = 0; i < options.length; i++) {
-            listMenu.add(options[i].getValue());
-        }
-        String optionsToChoose = String.join("\n", listMenu);
-        System.out.println(optionsToChoose);
+    public String getActiveSubstanceMenuOptionsToPrint() {
+        return activeSubstanceMenuOptionsToPrint;
     }
 }

@@ -22,7 +22,7 @@ public class Connector {
         return password;
     }
 
-    public Connection getConnection() throws SQLException {
+    /*public Connection getConnection() throws SQLException {
         return DriverManager.getConnection(url, user, password);
-    }
+    }*/
 }

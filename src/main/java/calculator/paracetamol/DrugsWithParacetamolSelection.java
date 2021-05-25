@@ -13,7 +13,7 @@ public class DrugsWithParacetamolSelection {
         System.out.println("\nNazwa podawanego leku to: ");
         DrugsWithParacetamolMenu drugsWithParacetamolMenu = new DrugsWithParacetamolMenu();
         while (!exitDrugsWithParacetamolMenu) {
-            drugsWithParacetamolMenu.showDrugsWithParacetamolMenu();
+            System.out.println(drugsWithParacetamolMenu.getParacetamolMenuOptionsToPrint());
             actionParacetamolMenu();
         }
     }

@@ -14,6 +14,7 @@ public class SubstanceSelection {
 
     public void selectSubstance() {
         ActiveSubstanceMenu activeSubstanceMenu = new ActiveSubstanceMenu();
+        exitActiveSubstancesMenu = false;
         while (!exitActiveSubstancesMenu) {
             System.out.println(activeSubstanceMenu.getActiveSubstanceMenuOptionsToPrint());
             actionMenu();

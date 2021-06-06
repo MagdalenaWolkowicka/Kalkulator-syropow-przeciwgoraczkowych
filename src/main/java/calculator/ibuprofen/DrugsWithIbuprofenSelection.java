@@ -11,6 +11,7 @@ public class DrugsWithIbuprofenSelection {
     public void selectDrugWithIbuprofen() {
         System.out.println("\nNazwa podawanego leku to: ");
         DrugsWithIbuprofenMenu drugsWithIbuprofenMenu = new DrugsWithIbuprofenMenu();
+        exitDrugsWithIbuprofenMenu = false;
         while (!exitDrugsWithIbuprofenMenu) {
             System.out.println(drugsWithIbuprofenMenu.getIbuprofenMenuOptionsToPrint());
             actionIbuprofenMenu();

@@ -19,6 +19,7 @@ public class Registration {
         System.out.println("----------------------------------");
         System.out.println("| Rejestr godzin podawania leków |");
         System.out.println("----------------------------------");
+        exitRegistration = false;
         while (!exitRegistration) {
             System.out.println(menuRegistration.getRegistrationMenuOptionsToPrint());
             actionMenu();
